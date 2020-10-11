@@ -1,0 +1,13 @@
+<h1>Lessons</h1>
+
+<% @lessons.each do |lesson| %>
+  <p>Id: <%= lesson.id %></p>
+  <p>Lesson: <%= lesson.lesson_name %></p>
+  <br>
+  <% lesson.sources.each do |source| %>
+    <%= source.title %>
+    <%= link_to source.link, source.link %>
+    <br>
+  <% end %>
+  <br>
+<% end %>
