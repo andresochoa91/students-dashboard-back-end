@@ -8,25 +8,25 @@ class LessonsController < ApplicationController
 
     if set_course_id && set_unit_id
       render json: {
-        status: 200,
         message: "Success",
         lessons: @lessons,
         course: Course.find(set_course_id),
         unit: Unit.find(set_unit_id)
-      }
+      },
+      status: 200
     elsif set_unit_id
       render json: {
-        status: 200,
         message: "Success",
         lessons: @lessons,
         unit: Unit.find(set_unit_id)
-      }
+      },
+      status: 200
     else
       render json: {
-        status: 200,
         message: "Success",
         lessons: @lessons
-      }
+      },
+      status: 200
     end
   end
 
@@ -36,10 +36,10 @@ class LessonsController < ApplicationController
       []
         
     render json: {
-      status: 200,
       message: "Success",
       lessons: @lessons
-    }
+    },
+    status: 200
   end
 
   def show
@@ -53,25 +53,25 @@ class LessonsController < ApplicationController
     # && @user 
       if set_course_id && set_unit_id
         render json: {
-          status: 200,
           message: "Success",
           lesson: @lesson,
           course: Course.find(set_course_id),
           unit: Unit.find(set_unit_id)
-        }
+        },
+        status: 200
       elsif set_unit_id
         render json: {
-          status: 200,
           message: "Success",
           lessons: @lesson,
           unit: Unit.find(set_unit_id)
-        }  
+        },  
+        status: 200
       else
         render json: {
-          status: 200,
           message: "Success",
           lesson: @lesson
-        }
+        },
+        status: 200
       end
     else
       error_json
@@ -84,10 +84,10 @@ class LessonsController < ApplicationController
     if @lesson
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Lesson created",
         lesson: @lesson
-      }
+      },
+      status: 200
     else
       error_json
     end
@@ -97,10 +97,10 @@ class LessonsController < ApplicationController
     if set_lesson.update(lesson_params)
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Lesson updated",
         lesson: set_lesson
-      }
+      },
+      status: 200
     else
       error_json
     end
@@ -110,9 +110,9 @@ class LessonsController < ApplicationController
     if set_lesson.destroy
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Lesson deleted",
-      }
+      },
+      status: 200
     else
       error_json
     end
@@ -150,9 +150,9 @@ class LessonsController < ApplicationController
 
     def error_json
       render json: {
-        status: 401,
         message: "Error"
-      }
+      },
+      status: 401
     end
 
 end

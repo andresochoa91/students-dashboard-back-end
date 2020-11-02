@@ -6,17 +6,17 @@ class UnitsController < ApplicationController
 
     if set_course_id
       render json: {
-        status: 200,
         message: "Success",
         units: @units,
         course: set_course
-      }      
+      },      
+      status: 200
     else
       render json: {
-        status: 200,
         message: "Success",
         units: @units
-      }
+      },
+      status: 200
     end
   end
 
@@ -28,10 +28,10 @@ class UnitsController < ApplicationController
         []
         
     render json: {
-      status: 200,
       message: "Success",
       units: @units
-    }
+    },
+    status: 200
   end
 
   def show
@@ -43,17 +43,17 @@ class UnitsController < ApplicationController
     # && @user 
       if set_course_id
         render json: {
-          status: 200,
           message: "Success",
           unit: set_unit,
           course: set_course
-        }
+        },
+        status: 200
       else
         render json: {
-          status: 200,
           message: "Success",
           unit: set_unit,
-        }
+        },
+        status: 200
       end
     else
       error_json
@@ -65,10 +65,10 @@ class UnitsController < ApplicationController
       @unit = Unit.create(unit_params)
       if @unit
         render json: {
-          status: 200,
           message: "Unit created",
           unit: @unit
-        }
+        },
+        status: 200
       else
         error_json
       end
@@ -78,10 +78,10 @@ class UnitsController < ApplicationController
     if set_unit.update(unit_params)
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Unit updated",
         unit: set_unit
-      }
+      },
+      status: 200
     else
       error_json
     end
@@ -91,9 +91,9 @@ class UnitsController < ApplicationController
     if set_unit.destroy
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Unit deleted",
-      }
+      },
+      status: 200
     else
       error_json
     end
@@ -123,8 +123,8 @@ class UnitsController < ApplicationController
 
     def error_json
       render json: {
-        status: 401,
         message: "Error"
-      }
+      },
+      status: 401
     end
 end

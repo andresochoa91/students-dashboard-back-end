@@ -216,7 +216,7 @@ lessons = Lesson.create([
   {
     lesson_name: "Ruby on Rails Basics",
     units: [
-      Unit.find(1)
+      Unit.find(6)
     ]
   },
   {

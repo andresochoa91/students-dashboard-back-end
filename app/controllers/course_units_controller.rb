@@ -22,39 +22,39 @@ class CourseUnitsController < ApplicationController
         set_course.units << set_unit
 
         render json: {
-          status: 200,
           message: "Relationship created successfully",
           relationship: set_course_unit,
           course: set_course,
           unit: set_unit
-        }
+        },
+        status: 200
       else
         render json: {
-          status: 404,
           message: "Not found"
-        }  
+        },  
+        status: 404
       end
     else
       render json: {
-        status: 412,
         message: "Relationship already exist"
-      }
+      },
+      status: 412
     end
   end
 
   def destroy
     if set_course_unit && set_course_unit.destroy
       render json: {
-        status: 200,
         message: "Relationship deleted successfully",
         course: set_course,
         unit: set_unit
-      }
+      },
+      status: 200
     else
       render json: {
-        status: 404,
         message: "Relationship doesn't exist"
-      }
+      },
+      status: 404
     end
   end
 

@@ -16,25 +16,22 @@ class CoursesController < ApplicationController
         []
 
     render json: {
-      status: 200,
       message: "Success",
       courses: @courses
-    }
+    },
+    status: 200
   end
 
   def show
     if set_course
     # && @user 
       render json: {
-        status: 200,
         message: "Success",
         course: set_course
-      }
+      },
+      status: 200
     else
-      render json: {
-        status: 401,
-        message: "Error"
-      }
+      error_json
     end
   end
 
@@ -43,15 +40,12 @@ class CoursesController < ApplicationController
     if @course
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Course created",
         course: @course
-      }
+      },
+      status: 201
     else
-      render json: {
-        status: 401,
-        message: "Error"
-      }
+      error_json
     end
   end
 
@@ -59,15 +53,12 @@ class CoursesController < ApplicationController
     if set_course.update(course_params)
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Course updated",
         course: set_course
-      }
+      },
+      status: 200
     else
-      render json: {
-        status: 401,
-        message: "Error"
-      }
+      error_json
     end
   end
 
@@ -75,14 +66,11 @@ class CoursesController < ApplicationController
     if set_course.destroy
     # && @user && @user.role == "staff"
       render json: {
-        status: 200,
         message: "Course deleted",
-      }
+      },
+      status: 200
     else
-      render json: {
-        status: 401,
-        message: "Error"
-      }
+      error_json
     end
   end
 
@@ -94,5 +82,12 @@ class CoursesController < ApplicationController
 
     def set_course
       Course.find(params[:id])
+    end
+
+    def error_json
+      render json: {
+        message: "Error"
+      },
+      status: 401
     end
 end

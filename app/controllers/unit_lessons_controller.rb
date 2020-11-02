@@ -5,39 +5,40 @@ class UnitLessonsController < ApplicationController
         set_unit.lessons << set_lesson
 
         render json: {
-          status: 200,
           message: "Relationship created successfully",
           relationship: set_unit_lesson,
           unit: set_unit,
           lesson: set_lesson
-        }
+        },
+        status: 200
       else
         render json: {
-          status: 404,
           message: "Not found"
         }  
+        status: 404
       end
     else
       render json: {
-        status: 412,
         message: "Relationship already exist"
       }
+      status: 412
     end
   end
 
   def destroy
     if set_unit_lesson && set_unit_lesson.destroy
-      render json: {
-        status: 200,
+      render json: 
+      {
         message: "Relationship deleted successfully",
         unit: set_unit,
         lesson: set_lesson
-      }
+      },
+      status: 200
     else
       render json: {
-        status: 404,
         message: "Relationship doesn't exist"
-      }
+      },
+      status: 404
     end
   end
 
