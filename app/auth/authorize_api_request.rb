@@ -1,6 +1,5 @@
 # app/auth/authorize_api_request.rb
 class AuthorizeApiRequest
-  include ::ActionController::Cookies
   
     def initialize(jwt = {})
       @jwt = jwt
