@@ -33,8 +33,8 @@ class AuthorizeApiRequest
     def decoded_auth_token
     # byebug
     # jwt = cookies.signed[:jwt]
-    return @decoded_auth_token ||= (JsonWebToken.decode(cookie_jwt))[:user_id]
-    raise(ExceptionHandler::AuthenticationError, Message.unauthorized)
+      return @decoded_auth_token ||= (JsonWebToken.decode(cookie_jwt))[:user_id]
+      raise(ExceptionHandler::AuthenticationError, Message.unauthorized)
     end
   
     # check for token in `Authorization` header

@@ -115,13 +115,13 @@ ActiveRecord::Schema.define(version: 2021_02_24_023525) do
 
   create_table "student_weekly_progresses", force: :cascade do |t|
     t.integer "total_progress"
+    t.integer "week_number"
     t.string "assignment_submission"
     t.integer "instructions_progress"
     t.integer "resources_progress"
     t.integer "assignment_progress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "week_number"
     t.bigint "week_id", null: false
     t.bigint "student_id", null: false
     t.bigint "unit_id", null: false
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_023525) do
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "enrolled"
+    t.boolean "enrolled"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

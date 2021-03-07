@@ -31,6 +31,7 @@ gem 'jwt', '~> 2.2', '>= 2.2.2'
 gem 'hirb'
 gem 'rails_same_site_cookie', '~> 0.1.8'
 gem 'rails_on_heroku'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

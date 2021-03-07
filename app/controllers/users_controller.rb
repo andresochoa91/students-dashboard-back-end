@@ -3,14 +3,14 @@ class UsersController < ApplicationController
   skip_before_action :authorize_user, only: [:create]
   # POST /signup
   # return authenticated token upon signup
-  def create
-    user = User.create!(user_params)
-    auth_token = AuthenticateUser.new(user.email, user.password).call
-    # HTTP-only cookie stored with refresh_token
+  # def create
+  #   user = User.create!(user_params)
+  #   auth_token = AuthenticateUser.new(user.email, user.password).call
+  #   # HTTP-only cookie stored with refresh_token
     
-    response = { message: Message.account_created, auth_token: auth_token }
-    json_response(response, :created)
-  end
+  #   response = { message: Message.account_created, auth_token: auth_token }
+  #   json_response(response, :created)
+  # end
   
   # GET /users
   def index
