@@ -1,0 +1,24 @@
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/puma-4.3.7/ext/puma_http11
+/Users/andres/.rvm/rubies/ruby-3.0.1/bin/ruby -I /Users/andres/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0 -r ./siteconf20210429-4018-41o54h.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+checking for DTLS_method() in openssl/ssl.h... yes
+checking for TLS_server_method() in openssl/ssl.h... yes
+checking for SSL_CTX_set_min_proto_version in openssl/ssl.h... yes
+creating Makefile
+
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/puma-4.3.7/ext/puma_http11
+make DESTDIR\= clean
+
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/puma-4.3.7/ext/puma_http11
+make DESTDIR\=
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/puma-4.3.7/ext/puma_http11
+make DESTDIR\= install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20210429-4018-xlw27q/puma
