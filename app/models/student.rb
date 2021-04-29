@@ -6,4 +6,7 @@ class Student < ApplicationRecord
   has_many :student_assignments
   has_many :assignments, through: :student_assignments, dependent: :delete_all
   has_one :student_course
+  
+  has_many :student_cohorts
+  has_many :cohort, through: :student_cohorts
 end

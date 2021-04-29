@@ -1,0 +1,16 @@
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+/Users/andres/.rvm/rubies/ruby-3.0.1/bin/ruby -I /Users/andres/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0 -r ./siteconf20210428-5283-2o5s2l.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+make DESTDIR\= clean
+
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+make DESTDIR\=
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/andres/Dev/codethedream/codethedreamstudents/students-dashboard-back-end/vendor/bundle/ruby/3.0.0/gems/racc-1.5.2/ext/racc/cparse
+make DESTDIR\= install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20210428-5283-3wouaw/racc

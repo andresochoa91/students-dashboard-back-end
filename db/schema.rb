@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_220259) do
+ActiveRecord::Schema.define(version: 2021_04_27_150739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,6 +157,15 @@ ActiveRecord::Schema.define(version: 2021_04_12_220259) do
     t.index ["assignment_id"], name: "index_student_assignments_on_assignment_id"
     t.index ["material_id"], name: "index_student_assignments_on_material_id"
     t.index ["student_id"], name: "index_student_assignments_on_student_id"
+  end
+
+  create_table "student_cohorts", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "cohort_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cohort_id"], name: "index_student_cohorts_on_cohort_id"
+    t.index ["student_id"], name: "index_student_cohorts_on_student_id"
   end
 
   create_table "student_courses", force: :cascade do |t|
@@ -340,6 +349,8 @@ ActiveRecord::Schema.define(version: 2021_04_12_220259) do
   add_foreign_key "student_assignments", "assignments"
   add_foreign_key "student_assignments", "materials"
   add_foreign_key "student_assignments", "students"
+  add_foreign_key "student_cohorts", "cohorts"
+  add_foreign_key "student_cohorts", "students"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
   add_foreign_key "student_materials", "materials"

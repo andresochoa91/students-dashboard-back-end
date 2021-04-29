@@ -84,13 +84,23 @@ Rails.application.routes.draw do
   # add assignment to lesson
   post 'lesson/:id/assignment/:assignment_id', to: 'lessons#add_assignment'
 
+  
+  post '/cohorts/:cohort_id/courses/:course_id', to: 'cohort_courses#create'
+  delete '/cohorts/:cohort_id/courses/:course_id', to: 'cohort_courses#destroy'
 
-  # post '/cohorts/:cohort_id/courses/:course_id', to: 'cohort_courses#create'
-  # delete '/cohorts/:cohort_id/courses/:course_id', to: 'cohort_courses#destroy'
-  # post '/courses/:course_id/units/:unit_id', to: 'course_units#create'
-  # delete '/courses/:course_id/units/:unit_id', to: 'course_units#destroy'
-  # post '/units/:unit_id/lessons/:lesson_id', to: 'unit_lessons#create'
-  # delete '/units/:unit_id/lessons/:lesson_id', to: 'unit_lessons#destroy'
+  post '/courses/:course_id/units/:unit_id', to: 'course_units#create'
+  delete '/courses/:course_id/units/:unit_id', to: 'course_units#destroy'
+
+  post '/units/:unit_id/lessons/:lesson_id', to: 'unit_lessons#create'
+  delete '/units/:unit_id/lessons/:lesson_id', to: 'unit_lessons#destroy'
+
+  # student_cohort association routes
+  get '/student_cohorts', to: 'student_cohort#index'
+  get '/student/:student_id/cohort/:cohort_id', to: 'student_cohort#show'
+  # add student to cohort and destroy student from cohort
+  post 'student/:student_id/cohort/:cohort_id', to: 'student_cohort#create'
+  delete 'student/:student_id/cohort/:cohort_id', to: 'student_cohort#destroy'
+
   # post '/lessons/:lesson_id/sources/:source_id', to: 'lesson_sources#create'
   # delete '/lessons/:lesson_id/sources/:source_id', to: 'lesson_sources#destroy'
   # get '/course_units', to: 'course_units#index'

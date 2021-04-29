@@ -156,11 +156,21 @@ staffs = Staff.create([
 cohorts = Cohort.create([
   {
     name: "Red Koi",
-    description: "Back-End development"
+    description: "Back-End development",
+    students: [
+      Student.find(1),
+      Student.find(2),
+      Student.find(3)
+    ]
   },
   {
     name: "Red Eclipse",
-    description: "Intro to programming"
+    description: "Intro to programming",
+    students: [
+      Student.find(4),
+      Student.find(5),
+      Student.find(6)
+    ]
   }
 ])
 
